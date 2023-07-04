@@ -10,6 +10,7 @@ import { Mesh, PlaneGeometry, ShaderMaterial, Vector2 } from 'three';
 import { Util } from '../libs/util';
 import { Param } from '../core/param';
 import { MousePointer } from '../core/mousePointer';
+import { Conf } from '../core/conf';
 
 
 export class Visual extends Canvas {
@@ -25,7 +26,7 @@ export class Visual extends Canvas {
     this._con = new Object3D();
     this.mainScene.add(this._con);
 
-    const t = TexLoader.instance.get('/assets/img/t-text.png');
+    const t = TexLoader.instance.get(Conf.instance.PATH_IMG + 't-text.png');
 
     this._left = new BaseItem(new Vector2(0, 0.5), t);
     this._con.add(this._left);
